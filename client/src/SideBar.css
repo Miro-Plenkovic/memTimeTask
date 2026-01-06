@@ -1,0 +1,11 @@
+.sidebar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--sidebar-w);
+  height: 100vh;              /* full viewport height */
+  overflow-y: auto;           /* sidebar scrolls internally if needed */
+  border-right: 1px solid #e5e5e5;
+  background: white;
+  z-index: 1000;
+}
