@@ -51,6 +51,13 @@ export default function App() {
       createTimeEntries(te)
         .then(() => {
           toast.success("new time entry created");
+          getTimeEntries(timeEntryPage)
+            .then((d) => {
+              setTimeEntryData(d);
+            })
+            .catch((e: unknown) => {
+              toast.error(e instanceof Error ? e.message : String(e));
+            });
         })
         .catch((e: unknown) => {
           toast.error(e instanceof Error ? e.message : String(e));
@@ -59,6 +66,13 @@ export default function App() {
       updateTimeEntries(te, id)
         .then(() => {
           toast.success("time entry updated");
+          getTimeEntries(timeEntryPage)
+            .then((d) => {
+              setTimeEntryData(d);
+            })
+            .catch((e: unknown) => {
+              toast.error(e instanceof Error ? e.message : String(e));
+            });
         })
         .catch((e: unknown) => {
           toast.error(e instanceof Error ? e.message : String(e));
